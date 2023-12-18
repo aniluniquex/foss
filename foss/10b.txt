@@ -1,0 +1,19 @@
+BEGIN {
+    total = 0;
+    avg = 0;
+    print "Name Grp S1 S2 S3 S4 S5\tTotal Average Result"
+    print "------- --- -- -- -- -- --\t ----- ---------- ------"
+}
+
+{
+    total = $3 + $4 + $5 + $6 + $7;
+    avg = total / 5;
+    
+    if ($3 > 35 && $4 > 35 && $5 > 35 && $6 > 35 && $7 > 35) {
+        print $0 "\t" total "\t" avg "\t" "PASS";
+    } else {
+        print $0 "\t" total "\t" avg "\t" "Fail";
+    }
+}
+
+END {}

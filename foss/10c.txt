@@ -1,0 +1,14 @@
+{
+    split(tolower($0), chars, "");
+    for (i in chars) {
+        if (chars[i] ~ /[aeiou]/) {
+            count[chars[i]]++;
+        }
+    }
+}
+
+END {
+    for (vowel in count) {
+        print vowel "-" count[vowel];
+    }
+}
